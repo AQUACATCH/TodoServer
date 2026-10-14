@@ -60,6 +60,17 @@ app.delete('/todos/:id', async (req, res)=>{
     }
 })
 
+//Login
+
+app.post('/todos/login',(req, res)=> {
+    const {username, password} = req.body
+    if(username == process.env.LOGIN_USERNAME && password == process.env.LOGIN_PASSWORD){
+        res.json({success: true, msg: "Successfully Logged In"})
+    }else{
+        res.json({success: false, msg: "Invalid Username or password"})
+    }
+})
+
 //INSERT INTO `todoclient`.`todo` (`task`) VALUES ('asd');
 
 const PORT = process.env.PORT || 8000
