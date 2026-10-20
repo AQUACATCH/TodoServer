@@ -1,9 +1,11 @@
 import express from 'express'
 import mysql from 'mysql2/promise'
 import { Myconfig } from './configDatebase.js'
+import cors from 'cors'
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 let connection
 
