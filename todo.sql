@@ -14,6 +14,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Adatbázis struktúra mentése a todoclient.
+CREATE DATABASE IF NOT EXISTS `todoclientdefaultdb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_hungarian_ci */;
+USE `todoclient`;
+
 -- Struktúra mentése tábla todoclient. todo
 CREATE TABLE IF NOT EXISTS `todo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -21,13 +26,12 @@ CREATE TABLE IF NOT EXISTS `todo` (
   `complete` tinyint(1) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
--- Tábla adatainak mentése todoclient.todo: ~3 rows (hozzávetőleg)
+-- Tábla adatainak mentése todoclient.todo: ~2 rows (hozzávetőleg)
 INSERT INTO `todo` (`id`, `task`, `complete`, `timestamp`) VALUES
-	(1, 'Iskola', 0, '2026-10-13 10:53:34'),
-	(2, 'Ebéd', 0, '2026-10-13 10:53:53'),
-	(3, 'Alvás\r\n', 0, '2026-10-13 10:54:30');
+	(18, '123', 1, '2026-10-15 12:17:44'),
+	(19, 'asd', 0, '2026-10-20 07:26:17');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
