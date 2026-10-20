@@ -30,8 +30,10 @@ app.get('/todos', async (req, res) => {
 
 app.post('/todos', async (req, res) => {
     const {task} =req.body
+    console.log(task)
     try {
         const sql ='INSERT INTO todo (task) VALUES (?)'
+        console.log(sql)
         await connection.execute(sql, [task])
         res.status(200).json({msg: 'Successfuly Added'})
     } catch (error) {
@@ -74,6 +76,11 @@ app.post('/todos/login',(req, res)=> {
 })
 
 //INSERT INTO `todoclient`.`todo` (`task`) VALUES ('asd');
+
+
+app.use('*', (req, res)=>{
+    console.log("Oldal nem elerhető")
+})
 
 const PORT = process.env.PORT || 8000
 app.listen(PORT, () => {
