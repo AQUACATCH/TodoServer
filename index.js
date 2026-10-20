@@ -78,8 +78,8 @@ app.post('/todos/login',(req, res)=> {
 //INSERT INTO `todoclient`.`todo` (`task`) VALUES ('asd');
 
 
-app.use('*', (req, res)=>{
-    console.log("Oldal nem elerhető")
+app.use((req, res)=>{
+    res.send("Oldal nem elerhető")
 })
 
 const PORT = process.env.PORT || 8000
